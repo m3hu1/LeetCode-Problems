@@ -1,2 +1,2 @@
 # LeetCode-Problems
-Collection of LeetCode questions to ace the coding interview!
+Collection of LeetCode problems to master Data Structures and Algorithms.
