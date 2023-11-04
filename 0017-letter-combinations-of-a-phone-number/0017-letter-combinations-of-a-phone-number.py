@@ -19,4 +19,3 @@ class Solution:
             return 
         solve(0,[])
         return a
-
