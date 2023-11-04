@@ -1,8 +1,9 @@
+// m3hu1
 class Solution {
 public:
     bool isPalindrome(int x) {
         int temp=x;
-        long rev=0;
+        double rev=0;
         if(x<0){
             return false;
         }
