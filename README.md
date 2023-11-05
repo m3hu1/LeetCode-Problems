@@ -1,2 +1,2 @@
 # LeetCode-Problems
-Collection of LeetCode problems to master Data Structures and Algorithms.
+Collection of LeetCode problems that I solved to master Data Structures and Algorithms.
