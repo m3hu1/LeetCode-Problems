@@ -1,4 +1,3 @@
-// m3hu1
 class Solution {
 public:
     bool isPalindrome(int x) {
