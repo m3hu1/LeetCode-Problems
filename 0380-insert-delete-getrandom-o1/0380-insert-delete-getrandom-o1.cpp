@@ -1,25 +1,25 @@
 class RandomizedSet {
 public:
-    set<int>s;
+    unordered_map<int,int> m;
     RandomizedSet() {
+        
     }
+    
     bool insert(int val) {
-        if(s.find(val)!=s.end()) return false;
-        else {
-            s.insert(val);
-            return true;
-        }
+        if(m.count(val)) return false; 
+        m[val]++;
+        return true;
     }
+    
     bool remove(int val) {
-       if(s.find(val)!=s.end()) {
-           s.erase(val);
-           return true;
-       }
-        else {
-            return false;
-        }
+        if(!m.count(val)) return false; 
+        m.erase(val);
+        return true;
     }
+    
     int getRandom() {
-        return *next(s.begin(),rand()%s.size());
+        auto item = m.begin();
+        advance(item, rand()%m.size());
+        return item->first;
     }
 };
