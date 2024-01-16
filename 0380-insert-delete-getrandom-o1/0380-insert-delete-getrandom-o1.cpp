@@ -1,35 +1,25 @@
-// m3hu1
 class RandomizedSet {
-private:
-    unordered_map<int, int> m;
-    vector<int> ans;
 public:
+    set<int>s;
     RandomizedSet() {
-
     }
     bool insert(int val) {
-        if(m.count(val)!= 0) 
-            return false;
-        m[val] = ans.size(); 
-        ans.push_back(val); 
-        return true;
-    }
-    bool remove(int val) {
-        if(m.count(val)!=0)
-        {
-            int index = m[val]; 
-            int lastvalue = ans.back(); 
-            ans[index] = lastvalue;
-            ans.pop_back(); 
-            m[lastvalue] = index;
-            m.erase(val);
+        if(s.find(val)!=s.end()) return false;
+        else {
+            s.insert(val);
             return true;
         }
-        return false;   
     }
-    
+    bool remove(int val) {
+       if(s.find(val)!=s.end()) {
+           s.erase(val);
+           return true;
+       }
+        else {
+            return false;
+        }
+    }
     int getRandom() {
-        int randomIndex = rand() % ans.size();
-        return ans[randomIndex];
+        return *next(s.begin(),rand()%s.size());
     }
 };
