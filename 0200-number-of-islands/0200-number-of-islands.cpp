@@ -1,55 +1,30 @@
-// m3hu1
 class Solution {
 public:
-void dfs(int i,int j,vector<vector<int>> &boolo,int row,int col,int &ans)
-    {
-        if((i-1>=0) && i-1<row && (boolo[i-1][j]==1))
-        {
-            boolo[i-1][j]=0;
-            dfs(i-1,j,boolo,row,col,ans);
+    void dfs(vector<vector<char>> &matrix,int x,int y,int r,int c){
+        if(x<0 || y<0 || x>=r || y>=c || matrix[x][y]!='1'){
+            return;
         }
-       if(i+1>=0 && i+1< row &&  (boolo[i+1][j]==1))
-        {
-            boolo[i+1][j]=0;
-            dfs(i+1,j,boolo,row,col,ans);
-        }
-      if(j-1>=0 &&  j-1<col && (boolo[i][j-1]==1))
-        {
-            boolo[i][j-1]=0;
-            dfs(i,j-1,boolo,row,col,ans);
-        }
-      if(j+1<col && j+1>=0 && (boolo[i][j+1]==1))
-        {
-            boolo[i][j+1]=0;
-            dfs(i,j+1,boolo,row,col,ans);
-        }
+        matrix[x][y] = '2';
+        dfs(matrix,x+1,y,r,c);
+        dfs(matrix,x,y+1,r,c);
+        dfs(matrix,x-1,y,r,c);
+        dfs(matrix,x,y-1,r,c);
     }
     int numIslands(vector<vector<char>>& grid) {
-         int row=grid.size();
-        int col=grid[0].size();
-        vector<vector<int>>boolo(row,vector<int>(col,0));
-        int ans=0;
-        for(int i=0;i<row;i++)
-        {
-            for(int j=0;j<col;j++)
-            {
-                if(grid[i][j]=='1')
-                boolo[i][j]=1;
-               
-            }
+        int rows = grid.size();
+        if(rows==0){
+            return 0;
         }
-        for(int i=0;i<row;i++)
-        {
-            for(int j=0;j<col;j++)
-            {
-                if(boolo[i][j]==1)
-                {
-                    boolo[i][j]=0;
-                    ans++;
-                    dfs(i,j,boolo,row,col,ans);
+        int cols = grid[0].size();
+        int cnt = 0;
+        for(int i=0;i<rows;i++){
+            for(int j=0;j<cols;j++){
+                if(grid[i][j]=='1'){
+                    dfs(grid,i,j,rows,cols);
+                    cnt++;
                 }
             }
         }
-        return ans;
+        return cnt;
     }
 };
