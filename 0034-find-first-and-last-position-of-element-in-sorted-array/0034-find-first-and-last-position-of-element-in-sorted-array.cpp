@@ -1,15 +1,33 @@
-// m3hu1
 class Solution {
 public:
     vector<int> searchRange(vector<int>& nums, int target) {
-        vector<int> arr = {-1,-1};
-        if(binary_search(nums.begin(), nums.end(), target) == 0){
-            return arr;
+        int low = 0;
+        int high = nums.size()-1;
+        int lb = nums.size();
+        int ub = nums.size();
+        while(low<=high){
+            int mid = (low+high)/2;
+            if(nums[mid]>=target){
+                lb = mid;
+                high = mid-1;
+            } else {
+                low = mid+1;
+            }
         }
-        int first = lower_bound(nums.begin(), nums.end(), target)-nums.begin();
-        int last = upper_bound(nums.begin(), nums.end(), target)-nums.begin();
-        arr[0] = first;
-        arr[1] = last-1;
-        return arr;
+        low = 0;
+        high = nums.size()-1;
+        while(low<=high){
+            int mid = (low+high)/2;
+            if(nums[mid]>target){
+                ub = mid;
+                high = mid-1;
+            } else {
+                low = mid+1;
+            }
+        }
+        vector<int> ans = {lb,ub-1};
+        vector<int> notFound = {-1,-1};
+        if(lb==nums.size() || nums[lb]!=target) return notFound;
+        return ans;
     }
 };
