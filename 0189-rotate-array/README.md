@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/rotate-array/?envType=study-plan-v2&envId=top-100-liked">189. Rotate Array</a></h2><h3>Medium</h3><hr><p>Given an integer array <code>nums</code>, rotate the array to the right by <code>k</code> steps, where <code>k</code> is non-negative.</p>
+<h2><a href="https://leetcode.com/problems/rotate-array">189. Rotate Array</a></h2><h3>Medium</h3><hr><p>Given an integer array <code>nums</code>, rotate the array to the right by <code>k</code> steps, where <code>k</code> is non-negative.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
