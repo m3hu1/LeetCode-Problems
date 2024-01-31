@@ -1,23 +1,39 @@
 class Solution {
- public:
-  int jump(vector<int>& nums) {
-    int ans = 0;
-    int end = 0;
-    int farthest = 0;
+public:
+    
+    
+    int search(int A[],int* p, int n){
+		if(n<=1)
+			return 1;
 
-    // Implicit BFS
-    for (int i = 0; i < nums.size() - 1; ++i) {
-      farthest = max(farthest, i + nums[i]);
-      if (farthest >= nums.size() - 1) {
-        ++ans;
-        break;
-      }
-      if (i == end) {    // Visited all the items on the current level.
-        ++ans;           // Increment the level.
-        end = farthest;  // Make the queue size for the next level.
-      }
+        if(p[0]==1)
+            return 0;
+        else
+            p[0]=1;
+        int step, max = n;
+        for(int i=A[0];i>=1;i--){
+            step = search(A+i,p+i,n-i);
+            if(step!=0){
+                if(step<=max)
+                    max = step;
+            }
+                
+        }
+        return 0;
     }
-
-    return ans;
-  }
+    
+    int jump(int A[], int n) {
+        int* p = new int[n];
+        memset(p,0,sizeof(int)*n);
+        int i,j;
+        for(i=0;i<n;i++){
+            for(j=1;j+i<=A[i];j++){
+                if(A[i]>=A[j+i]+j)
+                    A[j+i]=0;
+            }
+        }
+        return search(A,p,n);   
+    }
+    
+    
 };
