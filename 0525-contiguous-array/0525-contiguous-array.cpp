@@ -1,6 +1,9 @@
 class Solution {
 public:
     int findMaxLength(vector<int>& nums) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(nullptr);
+        cout.tie(nullptr);
         unordered_map <int, int> mp;
         int zero = 0;
         int one = 0;
