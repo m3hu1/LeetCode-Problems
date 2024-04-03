@@ -15,6 +15,8 @@ public:
     }
 
     bool exist(vector<vector<char>>& board, string word) {
+        if (word.empty()) return true;
+        if (board.empty() || board[0].empty()) return false;
         int rows = board.size();
         int cols = board[0].size();
         for (int i = 0; i < rows; i++) {
