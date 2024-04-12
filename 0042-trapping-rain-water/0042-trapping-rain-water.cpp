@@ -1,20 +1,23 @@
 class Solution {
- public:
-  int trap(vector<int>& height) {
-    const int n = height.size();
-    int ans = 0;
-    vector<int> l(n);  // l[i] := max(height[0..i])
-    vector<int> r(n);  // r[i] := max(height[i..n))
-
-    for (int i = 0; i < n; ++i)
-      l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);
-
-    for (int i = n - 1; i >= 0; --i)
-      r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);
-
-    for (int i = 0; i < n; ++i)
-      ans += min(l[i], r[i]) - height[i];
-
-    return ans;
-  }
+public:
+    int trap(vector<int>& height) {
+        if (height.size() == 0) return 0;
+        int ans = 0;
+        int low = 0;
+        int high = height.size() - 1;
+        int lMax = height[low];
+        int rMax = height[high];
+        while (low < high) {
+            if (lMax < rMax) {
+                low++;
+                lMax = max(lMax, height[low]);
+                ans += lMax - height[low];
+            } else {
+                high--;
+                rMax = max(rMax, height[high]);
+                ans += rMax - height[high];
+            }
+        }
+        return ans;
+    }
 };
