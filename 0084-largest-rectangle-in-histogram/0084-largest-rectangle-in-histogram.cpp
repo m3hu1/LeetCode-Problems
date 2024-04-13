@@ -1,26 +1,19 @@
-// m3hu1
 class Solution {
-    struct entry {
-        int x;
-        int height;
-    };
 public:
-    int largestRectangleArea(vector<int> &heights) {
-        int best = 0;
-        auto s = stack<entry>{};
+    int largestRectangleArea(vector<int>& heights) {
+        stack <pair <int, int>> st;
         heights.push_back(0);
-        for (int i = 0; i < (int) heights.size(); i++) {
-            auto h = heights[i];
-            auto xMin = i;
-            while (!s.empty() && h < s.top().height) {
-                best = max(best, s.top().height * (i - s.top().x));
-                xMin = min(xMin, s.top().x);
-                s.pop();
+        int maxArea = 0;
+        for (int i = 0; i < heights.size(); i++) {
+            int start = i;
+            while (!st.empty() && st.top().second > heights[i]) {
+                auto [idx, height] = st.top();
+                st.pop();
+                maxArea = max(maxArea, height * (i - idx));
+                start = idx;
             }
-            if (s.empty() || s.top().height < h) {
-                s.emplace(entry{xMin, h});
-            }
+            st.push({start, heights[i]});
         }
-        return best;
+        return maxArea;
     }
 };
