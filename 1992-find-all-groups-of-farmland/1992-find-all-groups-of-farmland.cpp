@@ -8,9 +8,9 @@ public:
         r = max(r, i);
         c = max(c, j);
         dfs(land, i + 1, j, r, c);
-        dfs(land, i - 1, j, r, c);
+        // dfs(land, i - 1, j, r, c);
         dfs(land, i, j + 1, r, c);
-        dfs(land, i, j - 1, r, c);
+        // dfs(land, i, j - 1, r, c);
     }
 
     vector<vector<int>> findFarmland(vector<vector<int>>& land) {
