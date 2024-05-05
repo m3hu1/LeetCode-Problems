@@ -10,6 +10,8 @@ class Solution {
 public:
     void deleteNode(ListNode* node) {
         node->val = node->next->val;
+        ListNode* temp = node->next; // to fix mem leak
         node->next = node->next->next;
+        delete temp; // deallocate mem; free the space
     }
 };
