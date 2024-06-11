@@ -3,7 +3,7 @@ class Solution:
         ans = 0
         hashset = set(nums)
 
-        for num in nums:
+        for num in hashset:
             if num - 1 not in hashset:
                 curr_length = 1
                 while num + 1 in hashset:
