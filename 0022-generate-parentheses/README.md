@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/generate-parentheses/?envType=study-plan-v2&envId=top-100-liked">22. Generate Parentheses</a></h2><h3>Medium</h3><hr><p>Given <code>n</code> pairs of parentheses, write a function to <em>generate all combinations of well-formed parentheses</em>.</p>
+<h2><a href="https://leetcode.com/problems/generate-parentheses">22. Generate Parentheses</a></h2><h3>Medium</h3><hr><p>Given <code>n</code> pairs of parentheses, write a function to <em>generate all combinations of well-formed parentheses</em>.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
