@@ -3,7 +3,7 @@ class Solution:
         def find(g: List[int], index: int) -> int:
             while g[index] != index:
                 index = g[index]
-            return inde
+            return index
 
         def tryUnion(g: List[int], r: List[int], u: int, v: int) -> bool:
             rootIndex1 = find(g, u-1)
