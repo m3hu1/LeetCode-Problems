@@ -1,6 +1,6 @@
 class Solution:
     def arrangeCoins(self, n: int) -> int:
-        low = 0
+        low = 1
         high = n
 
         while low <= high:
@@ -10,4 +10,4 @@ class Solution:
             else:
                 high = mid - 1
         
-        return low - 1
+        return high
