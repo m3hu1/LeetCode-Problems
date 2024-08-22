@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/number-complement">476. Number Complement</a></h2><h3>Easy</h3><hr><p>The <strong>complement</strong> of an integer is the integer you get when you flip all the <code>0</code>&#39;s to <code>1</code>&#39;s and all the <code>1</code>&#39;s to <code>0</code>&#39;s in its binary representation.</p>
+<h2><a href="https://leetcode.com/problems/number-complement/description/?envType=daily-question&envId=2024-08-22">476. Number Complement</a></h2><h3>Easy</h3><hr><p>The <strong>complement</strong> of an integer is the integer you get when you flip all the <code>0</code>&#39;s to <code>1</code>&#39;s and all the <code>1</code>&#39;s to <code>0</code>&#39;s in its binary representation.</p>
 
 <ul>
 	<li>For example, The integer <code>5</code> is <code>&quot;101&quot;</code> in binary and its <strong>complement</strong> is <code>&quot;010&quot;</code> which is the integer <code>2</code>.</li>
