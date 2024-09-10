@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/insert-greatest-common-divisors-in-linked-list">2807. Insert Greatest Common Divisors in Linked List</a></h2><h3>Medium</h3><hr><p>Given the head of a linked list <code>head</code>, in which each node contains an integer value.</p>
+<h2><a href="https://leetcode.com/problems/insert-greatest-common-divisors-in-linked-list/description/?envType=daily-question&envId=2024-09-10">2807. Insert Greatest Common Divisors in Linked List</a></h2><h3>Medium</h3><hr><p>Given the head of a linked list <code>head</code>, in which each node contains an integer value.</p>
 
 <p>Between every pair of adjacent nodes, insert a new node with a value equal to the <strong>greatest common divisor</strong> of them.</p>
 
