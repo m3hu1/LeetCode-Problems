@@ -1,20 +1,11 @@
 class Solution:
     def resultsArray(self, nums: List[int], k: int) -> List[int]:
-        if k == 1:
-            return nums
-        
-        if len(nums) == 1:
-            return [-1]
+        res = [-1] * (len(nums) - k + 1)
+        cnt = 0
 
-        ans = [-1] * (len(nums) - k + 1)
-        i = 0
+        for i in range(len(nums)):
+            cnt = cnt + 1 if i and nums[i - 1] + 1 == nums[i] else 0
+            if cnt >= k - 1:
+                res[i - k + 1] = nums[i]
 
-        for j in range(1, len(nums)):
-            if nums[j] == nums[j - 1] + 1:
-                if j - i + 1 == k:
-                    ans[i] = nums[j]
-                    i += 1
-            else:
-                i = j
-
-        return ans
+        return res
