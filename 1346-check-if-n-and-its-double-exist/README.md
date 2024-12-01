@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/check-if-n-and-its-double-exist">1346. Check If N and Its Double Exist</a></h2><h3>Easy</h3><hr><p>Given an array <code>arr</code> of integers, check if there exist two indices <code>i</code> and <code>j</code> such that :</p>
+<h2><a href="https://leetcode.com/problems/check-if-n-and-its-double-exist/description/?envType=daily-question&envId=2024-12-01">1346. Check If N and Its Double Exist</a></h2><h3>Easy</h3><hr><p>Given an array <code>arr</code> of integers, check if there exist two indices <code>i</code> and <code>j</code> such that :</p>
 
 <ul>
 	<li><code>i != j</code></li>
