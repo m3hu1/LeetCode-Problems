@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/reverse-odd-levels-of-binary-tree">2415. Reverse Odd Levels of Binary Tree</a></h2><h3>Medium</h3><hr><p>Given the <code>root</code> of a <strong>perfect</strong> binary tree, reverse the node values at each <strong>odd</strong> level of the tree.</p>
+<h2><a href="https://leetcode.com/problems/reverse-odd-levels-of-binary-tree/?envType=daily-question&envId=2024-12-20">2415. Reverse Odd Levels of Binary Tree</a></h2><h3>Medium</h3><hr><p>Given the <code>root</code> of a <strong>perfect</strong> binary tree, reverse the node values at each <strong>odd</strong> level of the tree.</p>
 
 <ul>
 	<li>For example, suppose the node values at level 3 are <code>[2,1,3,4,7,11,29,18]</code>, then it should become <code>[18,29,11,7,4,3,1,2]</code>.</li>
