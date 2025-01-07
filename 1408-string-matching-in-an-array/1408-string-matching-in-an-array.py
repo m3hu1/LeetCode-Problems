@@ -1,11 +1,12 @@
 class Solution:
-    def stringMatching(self, words: List[str]) -> List[str]:
-        ans = []
+    def stringMatching(self, w: List[str]) -> List[str]: 
+        temp, ans = "", []
 
-        for i in range(len(words)):
-            for j in range(i, len(words)):
-                if i != j and words[i] in words[j]:
-                    ans.append(words[i])
-                    break
-            
+        for word in w : 
+            temp += word + " "
+
+        for word in w : 
+            if temp.count(word) > 1 : 
+                ans.append(word) 
+        
         return ans
