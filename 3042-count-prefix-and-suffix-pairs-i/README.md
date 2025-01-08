@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/count-prefix-and-suffix-pairs-i">3042. Count Prefix and Suffix Pairs I</a></h2><h3>Easy</h3><hr><p>You are given a <strong>0-indexed</strong> string array <code>words</code>.</p>
+<h2><a href="https://leetcode.com/problems/count-prefix-and-suffix-pairs-i/description/?envType=daily-question&envId=2025-01-08">3042. Count Prefix and Suffix Pairs I</a></h2><h3>Easy</h3><hr><p>You are given a <strong>0-indexed</strong> string array <code>words</code>.</p>
 
 <p>Let&#39;s define a <strong>boolean</strong> function <code>isPrefixAndSuffix</code> that takes two strings, <code>str1</code> and <code>str2</code>:</p>
 
