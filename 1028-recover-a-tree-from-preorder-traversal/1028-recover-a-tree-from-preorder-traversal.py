@@ -1,33 +1,45 @@
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
 class Solution:
-    def recoverFromPreorder(self, t: str) -> Optional[TreeNode]:
-        arr = []
-        arr.append([0, 0])
-        temp = '-'
+    def recoverFromPreorder(self, traversal: str) -> Optional[TreeNode]:
+        d = {}
+        idx = traversal.find('-')
 
-        for i in t:
-            if i != '-':
-                if temp == '-':
-                    arr[-1][1] = int(i)
+        if idx == -1:
+            return TreeNode(int(traversal))
+
+        root = TreeNode(int(traversal[0 : idx]))
+        cnt = 0
+        num = ""
+        d[0]= root
+
+        for i in traversal[idx:]:
+            if i == '-':
+                if num == "":
+                    cnt += 1
                 else:
-                    arr[-1][1] *= 10
-                    arr[-1][1] += int(i)
+                    node = TreeNode(int(num))
+                    parent_node = d[cnt - 1]
+                    d[cnt] = node
+                    cnt = 1
+                    num = ""
+                    if parent_node.left is None:
+                        parent_node.left = node
+                    else:
+                        parent_node.right = node
             else:
-                if temp == '-':
-                    arr[-1][0] += 1
-                else:
-                    arr.append([1, 0])
-            temp = i
-        
-        mp = {}
+                num += i
 
-        for d, val in arr:
-            curr = TreeNode(val)
-            mp[d] = curr
-            if d != 0:
-                papa = mp[d - 1]
-                if papa.left is None:
-                    papa.left = curr
-                else:
-                    papa.right = curr
-        
-        return mp[0]
+        if num:
+            parent_node = d[cnt - 1]
+            node = TreeNode(int(num))
+            if parent_node.left is None:
+                parent_node.left = node
+            else:
+                parent_node.right = node
+
+        return root
