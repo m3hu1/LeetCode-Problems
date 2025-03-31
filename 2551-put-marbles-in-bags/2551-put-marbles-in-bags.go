@@ -1,18 +1,21 @@
-type long = int64
-
-func putMarbles(w []int, k int) int64 {
-    ans := long(0)
-	arr := make([]int, len(w) - 1)
-
-	for i := 0; i < len(w) - 1; i++ {
-		arr[i] = w[i] + w[i + 1]
+func putMarbles(ws []int, k int) int64 {
+    n := len(ws)
+	if k == 1 {
+		return 0
 	}
 
-	sort.Ints(arr)
+	ps := make([]int, n-1)
+	for i := 0; i < n-1; i++ {
+		ps[i] = ws[i] + ws[i+1]
+	}
+	sort.Ints(ps)
 
-	for i := 0; i < k - 1; i++ {
-		ans += long(arr[len(w) - 2 - i]) - long(arr[i])
+	var mini, maxi int64 = 0, 0
+
+	for i := 0; i < k-1; i++ {
+		mini += int64(ps[i])
+		maxi += int64(ps[n-2-i])
 	}
 
-	return ans
+	return maxi - mini
 }
