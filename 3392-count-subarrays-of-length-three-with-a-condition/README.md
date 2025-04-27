@@ -1,6 +1,4 @@
-<h2><a href="https://leetcode.com/problems/count-subarrays-of-length-three-with-a-condition">3392. Count Subarrays of Length Three With a Condition</a></h2><h3>Easy</h3><hr><p>Given an integer array <code>nums</code>, return the number of subarrays<em> </em>of length 3 such that the sum of the first and third numbers equals <em>exactly</em> half of the second number.</p>
-
-<p>A <strong>subarray</strong> is a contiguous <b>non-empty</b> sequence of elements within an array.</p>
+<h2><a href="https://leetcode.com/problems/count-subarrays-of-length-three-with-a-condition">3392. Count Subarrays of Length Three With a Condition</a></h2><h3>Easy</h3><hr><p>Given an integer array <code>nums</code>, return the number of <span data-keyword="subarray-nonempty">subarrays</span> of length 3 such that the sum of the first and third numbers equals <em>exactly</em> half of the second number.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
