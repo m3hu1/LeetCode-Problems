@@ -1,13 +1,6 @@
 class Solution:
     def differenceOfSums(self, n: int, m: int) -> int:
-        num1, num2 = 0, 0
+        arr1 = [x for x in range(1, n + 1) if x % m]
+        arr2 = [x for x in range(1, n + 1) if x % m == False]
 
-        for i in range(1, n + 1):
-            if i % m != 0:
-                num1 += i
-        
-        for i in range(1, n + 1):
-            if i % m == 0:
-                num2 += i
-        
-        return num1 - num2
+        return sum(arr1) - sum(arr2)
