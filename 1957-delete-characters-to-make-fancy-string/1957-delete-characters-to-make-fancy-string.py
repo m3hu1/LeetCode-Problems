@@ -1,10 +1,14 @@
 class Solution:
     def makeFancyString(self, s: str) -> str:
-        ans = []
+        c, ch = 1, s[0]
+        ans = [s[0]]
 
-        for i in range(len(s)):
-            if s[i] == s[-1] == s[-2] and len(ans) >= 2:
-                continue
-        ans.append(s[-1])
-        
+        for n, i in enumerate(s[1:]):
+            if i == ch:
+                c += 1
+                if c <= 2: ans.append(i)
+            else:
+                c = 1
+                ch = i
+                ans.append(i)
         return ''.join(ans)
