@@ -1,30 +1,24 @@
 class Solution:
     def maximumGain(self, s: str, x: int, y: int) -> int:
-        ans = 0
-        a, b = 'a', 'b'
+        ans, af, bf = 0, 0, 0
 
-        if x < y:
-            x, y = y, x
-            a, b = b, a
-        
-        idx = 0
-        i, j = 0, 0
-
-        while idx < len(s):
-            char = s[idx]
-            if char == a:
-                i += 1
-            elif char == b:
-                if i > 0:
-                    i -= 1
+        for c in s:
+            if c == 'a':
+                if y >= x and bf > 0:
+                    bf -= 1
+                    ans += y
+                    continue
+                af += 1
+                continue
+            if c == 'b':
+                if x >= y and af > 0:
+                    af -= 1
                     ans += x
-                else:
-                    j += 1
-            else:
-                ans += min(i, j) * y
-                i, j = 0, 0
-            idx += 1
+                    continue
+                bf += 1
+                continue
+            ans += min(af, bf) * min(x, y)
+            bf = 0
+            af = 0
         
-        ans += min(i, j) * y
-
-        return ans
+        return ans + min(af, bf) * min(x, y)
